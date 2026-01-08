@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Ankur Birthday</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial}
+body{
+background:linear-gradient(135deg,#ff416c,#ff4b2b);
+height:100vh;
+color:white;
+overflow:hidden;
+}
+section{
+display:none;
+height:100vh;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+text-align:center;
+padding:20px;
+}
+.active{display:flex}
+.countdown{display:flex;gap:15px;margin-top:20px}
+.box{
+background:rgba(0,0,0,0.3);
+padding:15px;
+border-radius:15px;
+min-width:70px;
+}
+button{
+margin:10px;
+padding:12px 25px;
+border:none;
+border-radius:25px;
+font-size:16px;
+cursor:pointer;
+}
+.yes{background:#00ff9c}
+.no{background:#ff1744;color:white}
+.card{
+background:rgba(255,255,255,0.15);
+padding:25px;
+border-radius:20px;
+max-width:350px;
+animation:pop .6s ease;
+}
+@keyframes pop{from{transform:scale(.8);opacity:0}to{transform:scale(1);opacity:1}}
+</style>
+</head>
+<body>
+
+<!-- COUNTDOWN -->
+<section id="s1" class="active">
+<h1>🎉 Ankur’s Birthday 🎉</h1>
+<div class="countdown">
+<div class="box">0<br>Days</div>
+<div class="box">0<br>Hours</div>
+<div class="box">0<br>Min</div>
+<div class="box">0<br>Sec</div>
+</div>
+<p style="margin-top:20px">Loading surprise… 💖</p>
+</section>
+
+<!-- QUESTION 1 -->
+<section id="s2">
+<h1>Do you know someone who cares for you a lot? 💖</h1>
+<button class="yes" onclick="go(3)">Yes</button>
+<button class="no" onclick="go(3)">No</button>
+</section>
+
+<!-- QUESTION 2 -->
+<section id="s3">
+<h1>Will you always keep smiling for me? 😊</h1>
+<button class="yes" onclick="go(4)">Yes</button>
+<button class="no" onclick="go(4)">No</button>
+</section>
+
+<!-- MESSAGE -->
+<section id="s4">
+<div class="card">
+<h2>💌 For You, Ankur</h2>
+<p style="margin-top:15px;line-height:1.6">
+always stay happy , i like to see you smiling .....<br><br>
+You don’t even know how special you are to me.<br><br>
+Every moment with you feels beautiful, and my heart feels safe with you.<br><br>
+This little surprise is just a small way of saying:<br><br>
+<b>I care for you more than words can ever explain</b>
+</p>
+</div>
+</section>
+
+<script>
+// auto move from countdown to first question
+setTimeout(()=>{ go(2); },1000);
+
+function go(n){
+document.querySelectorAll("section").forEach(s=>s.classList.remove("active"));
+document.getElementById("s"+n).classList.add("active");
+}
+</script>
+
+</body>
+</html>
